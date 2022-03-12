@@ -1,0 +1,47 @@
+.nav {
+    width: 100%;
+    padding: 3rem;
+    display: flex;
+    background-color: $color-grey-light;
+
+    &__logo-box {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex: 1;
+    }
+
+    &__author {
+        font-size: 2.4rem;
+        font-weight: $font-weight-bold;
+    }
+}
+
+.hamburger-box {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.hamburger-icon, .hamburger-icon::before, .hamburger-icon::after {
+    width: 22px;
+    height: 3px;
+    background-color: $color-black;
+    position: relative;
+    display: inline-block;
+}
+
+.hamburger-icon::before, .hamburger-icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+}
+
+.hamburger-icon::before {
+    top: -7px;
+}
+
+.hamburger-icon::after {
+    bottom: -7px;
+}
