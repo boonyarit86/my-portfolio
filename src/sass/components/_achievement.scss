@@ -1,0 +1,25 @@
+.achievement {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+
+  &__box {
+    width: 26rem;
+    background-color: $color-primary;
+    padding: 1rem;
+  }
+
+  &__icon {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  &__title {
+    font-weight: $font-weight-medium;
+    font-size: 2.4rem;
+  }
+
+  &__detail {
+    font-size: 1.8rem;
+  }
+}

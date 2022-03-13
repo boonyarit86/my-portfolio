@@ -5,4 +5,10 @@
 @import "./base/typography";
 @import "./base/utilities";  
 
-@import "./layout/layout.scss";
+@import "./components/achievement";
+
+@import "./layout/nav";
+@import "./layout/header";
+@import "./layout/AboutMe";
+
+@import "./pages/home";
