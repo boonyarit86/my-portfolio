@@ -1,0 +1,81 @@
+.project__flexbox {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 3rem;
+  column-gap: 3rem;
+}
+
+.project {
+  height: 60rem;
+  position: relative;
+  padding: 3rem;
+  z-index: 10;
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-position: center;
+    object-fit: cover;
+  }
+
+//   &:hover {
+//       background: rgba(15,20,30,.9);
+//   }
+
+  &__year {
+    font-size: 1.6rem;
+    color: $color-grey-dark;
+    flex: 1;
+  }
+
+  &__status {
+    width: 4.8rem;
+    height: 4.8rem;
+    background-color: $color-black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+  }
+
+  &__status-text {
+    font-size: 1.6rem;
+    color: $color-white;
+  }
+
+  &__title {
+    font-size: 2.4rem;
+    font-weight: $font-weight-bold;
+    z-index: 100;
+  }
+
+  &__tools {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__tool {
+    padding: 0.5rem;
+    &-icon {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+
+    &-title {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__detail {
+    color: $color-grey-dark;
+    font-size: 1.6rem;
+  }
+}
