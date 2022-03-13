@@ -1,0 +1,54 @@
+.skill {
+  width: 25rem;
+  background-color: $color-white;
+  padding: 1rem 2rem;
+  transition: all 0.3s;
+
+  &:hover {
+      transform: scale(1.1);
+  }
+
+  &__flexbox {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    column-gap: 2rem;
+    row-gap: 4rem;
+  }
+
+  &__title {
+    font-size: 2.4rem;
+    font-weight: $font-weight-bold;
+  }
+
+  &__box {
+    // display: flex;
+    // justify-content: flex-start;
+    // column-gap: 2.5rem;
+    // flex-wrap: wrap;
+    // margin-left: 1rem;
+  }
+
+  &__item {
+    display: flex;
+    gap: 1rem;
+    width: 15rem;
+  }
+
+  &__icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    color: $color-primary;
+  }
+
+  &__title-skill {
+    font-size: 1.6rem;
+    font-weight: $font-weight-medium;
+    line-height: 1;
+  }
+
+  &__level {
+    font-size: 1.4rem;
+    color: $color-grey-dark;
+  }
+}
