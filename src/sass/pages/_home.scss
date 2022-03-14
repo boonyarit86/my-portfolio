@@ -2,7 +2,6 @@
 .section-project,
 .section-contact {
   padding: 10rem 0;
-  background-color: $color-white;
 }
 
 .section-skill {
@@ -17,6 +16,10 @@
   }
 
   .skill-heading {
-      color: #fff;
+      color: $color-white;
   }
+}
+
+.section-footer {
+  padding: 10rem 3rem;
 }

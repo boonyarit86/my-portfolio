@@ -1,6 +1,7 @@
 import React from "react";
 import AboutMe from "./AboutMe";
 import Contact from "./Contact";
+import Footer from "./Footer";
 import MySkill from "./MySkill";
 import Project from "./Project";
 
@@ -11,6 +12,7 @@ function Main() {
         <MySkill />
         <Project />
         <Contact />
+        <Footer />
     </main>
   );
 }
