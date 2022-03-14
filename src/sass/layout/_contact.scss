@@ -1,0 +1,98 @@
+.contact {
+  display: flex;
+
+  &__form,
+  &__intro {
+    flex: 1;
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    color: $color-grey-dark;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  &__address {
+    font-size: 2rem;
+    color: $color-black;
+  }
+
+  &__form {
+    padding: 3rem;
+
+    &-group {
+      margin-bottom: 2rem;
+      position: relative;
+    }
+  }
+
+  &__label {
+    display: block;
+  }
+
+  &__input {
+    width: 100%;
+    height: 4.5rem;
+    border: none;
+    border-bottom: 1px solid $color-grey-medium;
+    position: relative;
+    z-index: 1;
+    
+  }
+
+  &__input, &__textarea, &__input::placeholder, &__textarea::placeholder {
+    font-size: inherit;
+    font-family: inherit;
+  }
+
+  &__input:focus {
+      outline: none;
+      border-bottom: 1px solid $color-black;
+  }
+
+  &__input:focus + .input-bottom-line {
+    width: 100%;
+  }
+
+  &__textarea {
+      display: block;
+      min-height: 4.5rem;
+      height: 10.9rem;
+      resize: none;
+      width: 100%;
+      border: 1px solid $color-grey-medium;
+  }
+
+  &__textarea:focus {
+    outline: none;
+    border: 1px solid $color-black;
+  }
+
+  &__btn {
+      background-color: $color-primary;
+      padding: 1.2rem 3.6rem;
+      border: none;
+      color: $color-white;
+      font-weight: $font-weight-bold;
+      transition: all 0.3s;
+      cursor: pointer;
+  }
+
+  &__btn:hover {
+    background-color: $color-primary-light;
+  }
+}
+
+.input-bottom-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: $color-black;
+  display: block;
+  z-index: 10;
+  transition: all 0.3s ease-in;
+}

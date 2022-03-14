@@ -6,7 +6,7 @@ function MySkill() {
     <section className="section-skill">
       <section className="section-skill__shape">
         <div className="row">
-          <h1 className="heading-primary u-center-text">My Skills</h1>
+          <h1 className="heading-primary skill-heading u-center-text">My Skills</h1>
           <SkillList />
         </div>
       </section>
