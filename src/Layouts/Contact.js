@@ -2,7 +2,7 @@ import React from "react";
 
 function Contact() {
   return (
-    <div className="section-contact">
+    <div className="section section-contact">
       <div className="row">
         <div className="contact">
           <div className="contact__intro">

@@ -9,7 +9,24 @@
   height: 60rem;
   position: relative;
   padding: 3rem;
-  z-index: 10;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: rgba($color: #000000, $alpha: 0.9);
+    opacity: 0;
+  }
+
+  &::after,
+  &__image {
+    transition: all 0.3s;
+  }
 
   &__image {
     position: absolute;
@@ -22,9 +39,9 @@
     object-fit: cover;
   }
 
-//   &:hover {
-//       background: rgba(15,20,30,.9);
-//   }
+  &__content {
+    z-index: 10;
+  }
 
   &__year {
     font-size: 1.6rem;
@@ -53,13 +70,17 @@
   &__title {
     font-size: 2.4rem;
     font-weight: $font-weight-bold;
-    z-index: 100;
   }
 
-  &__tools {
+  &__tools, &__links {
     display: flex;
     align-items: center;
     gap: 1rem;
+  }
+
+  &__links {
+    opacity: 0;
+    margin-top: 1rem;
   }
 
   &__tool {
@@ -74,8 +95,75 @@
     }
   }
 
+  &__link {
+    padding: 0.5rem;
+    &-icon {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+
+    &-title {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__link:hover a {
+    color: $color-white;
+  }
+
+  &__link a {
+    color: $color-grey-dark;
+  }
+
   &__detail {
     color: $color-grey-dark;
     font-size: 1.6rem;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+
+  &:hover &__image {
+    transform: scale(1.1);
+  }
+
+  &:hover &__title,
+  &:hover &__tool-title {
+    color: $color-white;
+  }
+
+  &:hover &__status {
+    border: 3px solid $color-white;
+  }
+
+  &:hover &__tool-icon {
+    fill: $color-white;
+  }
+
+  &-effect {
+    animation: fadeContentUp 0.3s ease-out;
+    animation-fill-mode: backwards;
+  }
+
+  &-effect-links {
+    animation: fadeContentUp 0.3s ease-out 0.4s;
+    animation-fill-mode: backwards;
+  }
+}
+
+@keyframes fadeContentUp {
+  0% {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+
+  80% {
+    transform: translateY(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0rem);
   }
 }
