@@ -1,21 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { StateContext } from "../context/index";
 
 function Menu() {
-  // useEffect(() => {
-  //   const menu_listEl = document.querySelector(".menu-list");
-  //   let menu_itemAll = document.querySelectorAll(".menu-item");
-
-  //   menu_listEl.addEventListener('click', (e) => {
-  //     menu_itemAll.forEach(item => {
-  //       if(item.classList.contains("active")) {
-  //         item.classList.remove("active");
-  //       }
-  //     })
-
-  //     let menu_itemEl = e.target.closest(".menu-item");
-  //     menu_itemEl.classList.add("active");
-  //   })
-  // }, [])
+  const action = useContext(StateContext);
 
   function onClick(e) {
     // Close menu
@@ -23,21 +10,11 @@ function Menu() {
     const menuEl = document.querySelector(".section-menu");
     const bodyEl = document.querySelector("body");
 
-    // set Active class
-    let menu_items = document.querySelectorAll(".menu-item");
-    let menu_itemEl = e.target.closest(".menu-item");
-
-    menu_items.forEach((el) => {
-      if (el.classList.contains("active")) {
-        el.classList.remove("active");
-      }
-    });
-
-    menu_itemEl.classList.add("active");
-
     menuEl.style.top = "100%";
     bodyEl.style.overflow = "auto";
     hamburgerEl.classList.remove("active");
+
+    action.onClickMenu();
   }
 
   return (
@@ -50,27 +27,27 @@ function Menu() {
         <p className="menu-title">MENU</p>
         <ul className="menu-list">
           <li className="menu-item">
-            <a className="menu-link" onClick={onClick}>
+            <a className="menu-link" href="#section-1" onClick={onClick}>
               Home
             </a>
           </li>
           <li className="menu-item">
-            <a className="menu-link" href="#" onClick={onClick}>
+            <a className="menu-link" href="#section-2" onClick={onClick}>
               About me
             </a>
           </li>
           <li className="menu-item">
-            <a className="menu-link" href="#" onClick={onClick}>
+            <a className="menu-link" href="#section-3" onClick={onClick}>
               Skills
             </a>
           </li>
           <li className="menu-item">
-            <a className="menu-link" href="#section-project" onClick={onClick}>
+            <a className="menu-link" href="#section-4" onClick={onClick}>
               Projects
             </a>
           </li>
           <li className="menu-item">
-            <a className="menu-link" href="#" onClick={onClick}>
+            <a className="menu-link" href="#section-5" onClick={onClick}>
               Contact
             </a>
           </li>

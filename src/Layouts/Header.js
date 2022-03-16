@@ -3,7 +3,7 @@ import React from "react";
 function Header() {
 
   return (
-    <header className="header">
+    <header className="section header" id="section-1">
       <h1 className="header__intro-main u-center-text">
         I am a front-end developer who loves to work hands-on about technology
       </h1>

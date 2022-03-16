@@ -4,7 +4,7 @@ import Achievement from "../components/Achievement";
 function AboutMe() {
 
   return (
-    <section className="section section-about">
+    <section className="section section-about" id="section-2">
       <div className="row">
         <h1 className="heading-primary u-center-text">About me</h1>
         <div className="detail-box">

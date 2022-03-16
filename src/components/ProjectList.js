@@ -29,7 +29,7 @@ function ProjectList() {
         project_link[project_id].classList.remove("project-effect-links");
       } else return;
     });
-  });
+  }, []);
 
   return (
     <div className="project__flexbox">

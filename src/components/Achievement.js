@@ -10,11 +10,6 @@ function Achievement() {
     <div className="achievement u-mb-medium">
       {achievements.map((ach, index) => (
         <div className="achievement__box u-center-text" key={index}>
-          {/* <img
-            className="achievement__icon"
-            src={`./images/${ach.icon}-outline.svg`}
-            alt="icon"
-          /> */}
           <ion-icon class="achievement__icon" name={ach.icon}></ion-icon>
           <p className="achievement__title">{ach.title}</p>
           <p className="achievement__detail">{ach.description}</p>

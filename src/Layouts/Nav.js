@@ -1,26 +1,30 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import { StateContext } from "../context/index";
 
 function Nav() {
-  const [active, setActive] = useState(false);
+  const action = useContext(StateContext)
 
   const onClick = (e) => {
     const hamburgerEl = document.querySelector(".hamburger-box");
     const menuEl = document.querySelector(".section-menu");
+    const menuListEl = document.querySelector(".menu");
     const bodyEl = document.querySelector("body");
     
-    if (!active) {
+    if (!action.isMenuOpened) {
       // false / 100
       menuEl.style.top = "0%";
       bodyEl.style.overflow = "hidden";
       hamburgerEl.classList.add("active");
+      menuListEl.classList.add("menu-effect")
     } else {
       // true / 0
       menuEl.style.top = "100%";
       bodyEl.style.overflow = "auto";
       hamburgerEl.classList.remove("active");
+      menuListEl.classList.remove("menu-effect");
     }
 
-    setActive((prev) => !prev);
+    action.onClickMenu();
   };
 
   return (

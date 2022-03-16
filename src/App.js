@@ -5,17 +5,20 @@ import Nav from "./Layouts/Nav";
 import Header from "./Layouts/Header";
 import Main from "./Layouts/Main";
 import Menu from "./Layouts/Menu";
+import { StateContext, useStateContext } from "./context/index";
 
 function App() {
+  const { isMenuOpened, onClickMenu } = useStateContext();
 
   useEffect(() => {
     const headerEl = document.querySelector(".header");
     const navEl = document.querySelector(".nav");
+    let menu_items = document.querySelectorAll(".menu-item");
 
+    // set Nav Background
     const obs = new IntersectionObserver(
       function (entries) {
         const ent = entries[0];
-        // console.log(ent);
 
         if (ent.isIntersecting === false) {
           navEl.style.backgroundColor = "rgba(255, 255, 255, 0.97)";
@@ -26,7 +29,6 @@ function App() {
         }
       },
       {
-        // In the viewport
         root: null,
         threshold: 0,
         rootMargin: "-200px",
@@ -55,14 +57,36 @@ function App() {
       sectionObserver.observe(section);
       section.classList.add("section--hidden");
     });
-  });
+
+    /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+    function scrollActive() {
+      const scrollY = window.pageYOffset;
+    
+      allSections.forEach((current) => {
+        const sectionHeight = current.offsetHeight,
+          sectionTop = current.offsetTop - 80,
+          sectionId = Number(current.getAttribute("id").split("-")[1]) - 1;
+        
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+          menu_items[sectionId].classList.add("active");
+        } else {
+          menu_items[sectionId].classList.remove("active");
+        }
+      });
+    }
+    window.addEventListener("scroll", scrollActive);
+  }, []);
 
   return (
     <div className="app">
-      <Menu />
-      <Nav />
-      <Header />
-      <Main />
+      <StateContext.Provider
+        value={{ isMenuOpened: isMenuOpened, onClickMenu: onClickMenu }}
+      >
+        <Menu />
+        <Nav />
+        <Header />
+        <Main />
+      </StateContext.Provider>
     </div>
   );
 }
