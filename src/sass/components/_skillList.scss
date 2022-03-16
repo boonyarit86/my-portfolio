@@ -8,6 +8,11 @@
       transform: scale(1.1);
   }
 
+  @include respond(small-phone) {
+    // width < 500
+    width: 30rem;
+  }
+
   &__flexbox {
     display: flex;
     justify-content: space-around;

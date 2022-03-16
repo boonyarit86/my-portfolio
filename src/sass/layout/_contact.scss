@@ -1,6 +1,12 @@
 .contact {
   display: flex;
 
+  @include respond(phone) {
+    // width < 600
+    flex-direction: column;
+    gap: 2rem;
+  }
+
   &__form,
   &__intro {
     flex: 1;
@@ -25,6 +31,10 @@
     &-group {
       margin-bottom: 2rem;
       position: relative;
+    }
+
+    @include respond(phone) {
+      padding: 0;
     }
   }
 

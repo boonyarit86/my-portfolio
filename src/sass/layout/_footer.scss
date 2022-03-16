@@ -7,6 +7,12 @@
   }
   &__row {
     display: flex;
+
+    @include respond(phone) {
+      // width < 600
+      flex-direction: column;
+      gap: 2rem;
+    }
   }
 
   &__contact {
@@ -43,10 +49,21 @@
   &__menu {
     display: flex;
     justify-content: space-around;
+
+    @include respond(phone) {
+      // width < 600
+      flex-direction: column;
+      gap: 2rem;
+    }
   }
 
   &__menu-box {
     padding: 0 1rem;
+
+    @include respond(phone) {
+      // width < 600
+      padding: 0;
+    }
   }
 
   &__menu-list {
@@ -68,6 +85,11 @@
     &-detail {
       font-size: 1.2rem;
       color: $color-grey-dark;
+    }
+
+    @include respond(phone) {
+      // width < 600
+      margin-left: 1rem;
     }
   }
 

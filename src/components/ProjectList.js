@@ -6,7 +6,6 @@ function ProjectList() {
     let projects = document.querySelector(".project__flexbox");
     let project_item = document.querySelectorAll(".project__content");
     let project_link = document.querySelectorAll(".project__links");
-    console.log(project_link[0]);
 
     projects.addEventListener("mouseover", (e) => {
       let projectEl = e.target.closest(".project");
