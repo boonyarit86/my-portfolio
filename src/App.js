@@ -6,9 +6,11 @@ import Header from "./Layouts/Header";
 import Main from "./Layouts/Main";
 import Menu from "./Layouts/Menu";
 import { StateContext, useStateContext } from "./context/index";
+import LoadingSpinner from "./components/LoadingSpinner";
 
 function App() {
-  const { isMenuOpened, onClickMenu } = useStateContext();
+  const { isMenuOpened, onClickMenu, isLoading, handleLoading } =
+    useStateContext();
 
   useEffect(() => {
     const headerEl = document.querySelector(".header");
@@ -61,12 +63,12 @@ function App() {
     /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
     function scrollActive() {
       const scrollY = window.pageYOffset;
-    
+
       allSections.forEach((current) => {
         const sectionHeight = current.offsetHeight,
           sectionTop = current.offsetTop - 80,
           sectionId = Number(current.getAttribute("id").split("-")[1]) - 1;
-        
+
         if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
           menu_items[sectionId].classList.add("active");
         } else {
@@ -80,8 +82,14 @@ function App() {
   return (
     <div className="app">
       <StateContext.Provider
-        value={{ isMenuOpened: isMenuOpened, onClickMenu: onClickMenu }}
+        value={{
+          isMenuOpened: isMenuOpened,
+          onClickMenu: onClickMenu,
+          handleLoading: handleLoading,
+          isLoading: isLoading,
+        }}
       >
+        {isLoading && <LoadingSpinner />}
         <Menu />
         <Nav />
         <Header />
