@@ -1,25 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Axios from "axios";
-import Popup from "../components/Popup";
+import { StateContext } from "../context/index";
 
 function Contact() {
   const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
+  const action = useContext(StateContext);
 
   async function onSubmit(e) {
     e.preventDefault();
-
+  
     let data = { name, email, message };
+    action.handleLoading();
     try {
       await Axios.post(
         `${process.env.REACT_APP_BACKEND_URL}/send_email`,
         data
-      ).then((res) => console.log(res.data));
+      ).then((res) => {
+        action.openPopup({isSuccess: true, message: res.data.message});
+      });
     } catch (error) {
       console.error(error);
+      action.openPopup({isSuccess: false, message: "Error in sending email, please try again!"});
+      
     }
-    // console.log(data);
+    action.handleLoading();
+    
   }
 
   return (
@@ -83,8 +90,6 @@ function Contact() {
           </div>
         </div>
       </div>
-      {/* <Popup 
-      message={"Your message has been sent successfully"} /> */}
     </React.Fragment>
   );
 }

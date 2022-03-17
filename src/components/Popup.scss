@@ -4,13 +4,26 @@
   z-index: 10000;
   width: 100%;
   height: 100%;
+  transition: all 0.3s;
 
-  &__box-icon--success, &__btn--success {
+  &--open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &--close {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &__box-icon--success,
+  &__btn--success {
     background-color: #51cf66;
   }
 
-  &__box-icon--error, &__btn--error {
-      background-color: #F03E3E;
+  &__box-icon--error,
+  &__btn--error {
+    background-color: #f03e3e;
   }
 
   &__box-icon {
@@ -29,7 +42,18 @@
   &__icon {
     width: 4.8rem;
     height: 4.8rem;
-    color: #fff;
+    // *** Bug Fix ***
+    // When you set "popup" class to be "visibility: hidden" property
+    // after that "popup__icon" class will be automatically set 
+    // to be "visibility: hidden" property
+    // ***************
+    visibility: visible;
+    &--success {
+      color: #fff;
+    }
+    &--error {
+      color: #0f141e;
+    }
   }
 
   &__box {
@@ -50,8 +74,9 @@
     margin-bottom: 1rem;
   }
 
-  &__title, &__btn {
-      text-transform: uppercase;
+  &__title,
+  &__btn {
+    text-transform: uppercase;
   }
 
   &__title {
@@ -71,19 +96,19 @@
     font-weight: bold;
 
     &--success {
-        color: #fff;
+      color: #fff;
 
-        &:hover {
-            background-color: #40c057;
-        }
+      &:hover {
+        background-color: #40c057;
+      }
     }
 
     &--error {
-        color: #0f141e;
+      color: #0f141e;
 
-        &:hover {
-            background-color: #e03131;
-        }
+      &:hover {
+        background-color: #e03131;
+      }
     }
   }
 }

@@ -7,9 +7,10 @@ import Main from "./Layouts/Main";
 import Menu from "./Layouts/Menu";
 import { StateContext, useStateContext } from "./context/index";
 import LoadingSpinner from "./components/LoadingSpinner";
+import Popup from "./components/Popup";
 
 function App() {
-  const { isMenuOpened, onClickMenu, isLoading, handleLoading } =
+  const { isMenuOpened, onClickMenu, isLoading, handleLoading, openPopup, closePopup, popup } =
     useStateContext();
 
   useEffect(() => {
@@ -87,9 +88,14 @@ function App() {
           onClickMenu: onClickMenu,
           handleLoading: handleLoading,
           isLoading: isLoading,
+          openPopup: openPopup,
+          closePopup: closePopup,
+          openPopup: openPopup,
+          popup: popup
         }}
       >
         {isLoading && <LoadingSpinner />}
+        <Popup />
         <Menu />
         <Nav />
         <Header />

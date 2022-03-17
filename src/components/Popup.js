@@ -1,33 +1,38 @@
-import React from "react";
-import ReactDom from "react-dom";
+import React, { useContext } from "react";
+import { StateContext } from "../context";
 import "./Popup.scss";
 
-function Popup(props) {
-  return ReactDom.createPortal(
-    <div className="popup">
+function Popup() {
+  const action = useContext(StateContext);
+  const state = action.popup;
+
+  return (
+    <div className="popup popup--close" onClick={action.closePopup}>
       <div className="popup__box">
         <div
           className={`popup__box-icon popup__box-icon--${
-            props.success ? "success" : "error"
+            state.isSuccess ? "success" : "error"
           }`}
         >
           <ion-icon
-            class="popup__icon"
-            name={`${props.success ? "checkmark" : "close"}-outline`}
+            class={`popup__icon popup__icon--${
+              state.isSuccess ? "success" : "error"
+            }`}
+            name={`${state.isSuccess ? "checkmark" : "close"}-outline`}
           ></ion-icon>
         </div>
-        <p className="popup__title">{props.success ? "success" : "error"}</p>
-        <p className="popup__message">{props.message}</p>
+        <p className="popup__title">{state.isSuccess ? "success" : "error"}</p>
+        <p className="popup__message">{state.message}</p>
         <button
           className={`popup__btn popup__btn--${
-            props.success ? "success" : "error"
+            state.isSuccess ? "success" : "error"
           }`}
+          onClick={action.closePopup}
         >
           ok
         </button>
       </div>
-    </div>,
-    document.getElementById("popup-hook")
+    </div>
   );
 }
 
