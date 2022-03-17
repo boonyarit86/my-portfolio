@@ -9,7 +9,7 @@ function AboutMe() {
         <h1 className="heading-primary u-center-text">About me</h1>
         <div className="detail-box">
           <div className="detail-profile">
-            <img src="./images/profile.jpg" alt="My profile" />
+            <img src="./images/profile--1.jpg" alt="My profile" />
           </div>
           <div className="detail-aboutme">
             <Achievement />

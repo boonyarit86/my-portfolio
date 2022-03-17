@@ -1,6 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
+import Axios from "axios";
+
 
 function Contact() {
+
+  const [message, setMessage] = useState("");
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+ 
+  async function onSubmit(e) {
+    e.preventDefault();
+
+    let data = {name, email, message}
+    try {
+      await Axios.post(`${process.env.REACT_APP_BACKEND_URL}/send_email`, data)
+      .then((res) => console.log(res.data));
+    } catch (error) {
+      console.error(error);
+    }
+    // console.log(data);
+  }
+
   return (
     <div className="section section-contact" id="section-5">
       <div className="row">
@@ -15,22 +35,46 @@ function Contact() {
               93 Sukumvit Soi, Sukumvit Rd. Bang Jak, Phra Khanong Bangkok 10260
             </p>
           </div>
-          <form className="contact__form">
-              <div className="contact__form-group">
-                  <label className="contact__label" >Your Name</label>
-                  <input className="contact__input" type="text" name="name" placeholder="What's your name?" required />
-                  <span className="input-bottom-line"></span>
-              </div>
-              <div className="contact__form-group">
-                  <label className="contact__label" >Your Email</label>
-                  <input className="contact__input" type="email" name="email" placeholder="What's your email address?" required />
-                  <span className="input-bottom-line"></span>
-              </div>
-              <div className="contact__form-group">
-                  <label className="contact__label u-mb-small">Your Message</label>
-                  <textarea className="contact__textarea" name="message" placeholder="What's your message?" rows="1" required />
-              </div>
-              <button type="submit" className="contact__btn">Send message</button>
+          <form className="contact__form" onSubmit={onSubmit}>
+            <div className="contact__form-group">
+              <label className="contact__label">Your Name</label>
+              <input
+                className="contact__input"
+                type="text"
+                name="name"
+                placeholder="What's your name?"
+                required
+                onChange={(e) => setName(e.target.value) }
+              />
+              <span className="input-bottom-line"></span>
+            </div>
+            <div className="contact__form-group">
+              <label className="contact__label">Your Email</label>
+              <input
+                className="contact__input"
+                type="email"
+                name="email"
+                placeholder="What's your email address?"
+                required
+                onChange={(e) => setEmail(e.target.value) }
+
+              />
+              <span className="input-bottom-line"></span>
+            </div>
+            <div className="contact__form-group">
+              <label className="contact__label u-mb-small">Your Message</label>
+              <textarea
+                className="contact__textarea"
+                name="message"
+                placeholder="What's your message?"
+                rows="1"
+                required
+                onChange={(e) => setMessage(e.target.value) }
+              />
+            </div>
+            <button type="submit" className="contact__btn">
+              Send message
+            </button>
           </form>
         </div>
       </div>

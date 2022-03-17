@@ -53,18 +53,15 @@
 @keyframes fadeInLeft {
   0% {
     opacity: 0;
-    // transform: translate(-40%, -50%);
     left: 40%;
   }
 
   80% {
     left: 60%;
-    // transform: translate(-60%, -50%);
   }
 
   100% {
     opacity: 1;
-    // transform: translate(-50%, -50%);
     left: 50%;
   }
 }
