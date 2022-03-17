@@ -75,6 +75,9 @@
   &__title {
     font-size: 2.4rem;
     font-weight: $font-weight-bold;
+    a {
+      color: $color-black;
+    }
   }
 
   &__tools, &__links {
@@ -133,7 +136,7 @@
     transform: scale(1.1);
   }
 
-  &:hover &__title,
+  &:hover &__title a,
   &:hover &__tool-title {
     color: $color-white;
   }

@@ -44,7 +44,9 @@ function ProjectList() {
         </div>
         <div className="project__content">
           <p className="project__year">2019 - 2022</p>
-          <p className="project__title">ETT-Stock</p>
+          <p className="project__title">
+            <a href="https://ett-test.herokuapp.com">ETT-Stock</a>
+          </p>
           <div className="project__tools">
             <div className="project__tool u-center-text">
               <ion-icon class="project__tool-icon" name="logo-react"></ion-icon>
@@ -64,7 +66,7 @@ function ProjectList() {
           </p>
           <div className="project__links">
             <div className="project__link u-center-text">
-              <a href="#">
+              <a href="https://ett-test.herokuapp.com">
                 <ion-icon
                   class="project__link-icon"
                   name="logo-chrome"
@@ -73,7 +75,7 @@ function ProjectList() {
               </a>
             </div>
             <div className="project__link u-center-text">
-              <a href="#">
+              <a href="https://github.com/boonyarit86/ETT-Electronic-Stock">
                 <ion-icon
                   class="project__link-icon"
                   name="logo-github"
@@ -96,7 +98,9 @@ function ProjectList() {
         </div>
         <div className="project__content">
           <p className="project__year">2019 - 2022</p>
-          <p className="project__title">ETT-Stock</p>
+          <p className="project__title">
+            <a href="https://ett-test.herokuapp.com">ETT-Stock</a>
+          </p>
           <div className="project__tools">
             <div className="project__tool u-center-text">
               <ion-icon class="project__tool-icon" name="logo-react"></ion-icon>
@@ -116,7 +120,7 @@ function ProjectList() {
           </p>
           <div className="project__links">
             <div className="project__link u-center-text">
-              <a href="#">
+              <a href="https://ett-test.herokuapp.com">
                 <ion-icon
                   class="project__link-icon"
                   name="logo-chrome"
@@ -125,7 +129,7 @@ function ProjectList() {
               </a>
             </div>
             <div className="project__link u-center-text">
-              <a href="#">
+              <a href="https://github.com/boonyarit86/ETT-Electronic-Stock">
                 <ion-icon
                   class="project__link-icon"
                   name="logo-github"
