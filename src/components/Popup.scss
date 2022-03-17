@@ -1,0 +1,89 @@
+.popup {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+  width: 100%;
+  height: 100%;
+
+  &__box-icon--success, &__btn--success {
+    background-color: #51cf66;
+  }
+
+  &__box-icon--error, &__btn--error {
+      background-color: #F03E3E;
+  }
+
+  &__box-icon {
+    border-radius: 100%;
+    width: 8rem;
+    height: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__icon {
+    width: 4.8rem;
+    height: 4.8rem;
+    color: #fff;
+  }
+
+  &__box {
+    width: 30rem;
+    // height: 25rem;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 4px;
+  }
+
+  &__title,
+  &__message {
+    margin-bottom: 1rem;
+  }
+
+  &__title, &__btn {
+      text-transform: uppercase;
+  }
+
+  &__title {
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 4rem;
+  }
+
+  &__btn {
+    width: 100%;
+    margin-bottom: 2rem;
+    height: 3.6rem;
+    border: none;
+    transition: all 0.3s;
+    cursor: pointer;
+    font-weight: bold;
+
+    &--success {
+        color: #fff;
+
+        &:hover {
+            background-color: #40c057;
+        }
+    }
+
+    &--error {
+        color: #0f141e;
+
+        &:hover {
+            background-color: #e03131;
+        }
+    }
+  }
+}
