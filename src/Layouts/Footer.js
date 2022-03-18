@@ -25,10 +25,10 @@ function Footer() {
             <h3 className="footer__heading">Latest projects —</h3>
             <ul className="footer__menu-list">
               <li className="footer__menu-item">
-                <a className="footer__menu-link" href="">ETT-Stock</a>
+                <a className="footer__menu-link" href="https://ett-test.herokuapp.com">ETT-Stock</a>
               </li>
               <li className="footer__menu-item">
-                <a className="footer__menu-link" href="">LinkedIn-Clone</a>
+                <a className="footer__menu-link" href="#">LinkedIn-Clone</a>
               </li>
             </ul>
           </div>
@@ -36,10 +36,10 @@ function Footer() {
             <h3 className="footer__heading">Follow me on —</h3>
             <ul className="footer__menu-list">
               <li className="footer__menu-item">
-                <a className="footer__menu-link" href="">Line</a>
+                <a className="footer__menu-link" href="https://line.me/ti/p/nxQ62W7fBz">Line</a>
               </li>
               <li className="footer__menu-item">
-                <a className="footer__menu-link" href="">LinkedIn-Clone</a>
+                <a className="footer__menu-link" href="https://www.linkedin.com/in/boonyarit-ritdet-09197b220/">LinkedIn</a>
               </li>
             </ul>
           </div>
