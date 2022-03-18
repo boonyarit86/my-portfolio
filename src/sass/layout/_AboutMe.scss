@@ -14,17 +14,22 @@
 
 .detail-profile {
   flex: 1;
-  & img {
+  &__img {
     width: 45rem;
     height: 45rem;
     filter: grayscale(1);
     object-fit: cover;
+    transition: filter 0.5s;
 
     @include respond(phone) {
         // width < 600
         width: 100%;
       }
   }
+}
+
+.lazy-img {
+  filter: blur(20px) grayscale((1));
 }
 
 .detail-aboutme {
