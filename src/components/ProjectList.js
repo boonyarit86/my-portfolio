@@ -50,11 +50,9 @@ function ProjectList() {
             )}
             <div className="project__content">
               <p className="project__year" style={{color: project.theme}}>
-                {project.startDate} - {project.endDate}
-              </p>
-              {/* <p className="project__title"> */}
-                <a className="project__title" href="https://ett-test.herokuapp.com" style={{color: project.theme}}>{project.name}</a>
-              {/* </p> */}
+                {project.startDate} {project.endDate !== "" && `- ${project.endDate}`}
+              </p>      
+                <a className="project__title" href={project.url.base} style={{color: project.theme}}>{project.name}</a>       
               <div className="project__tools">
                 {project.tools.map((tool, index) => (
                   <div className="project__tool u-center-text" key={index} style={{color: project.theme}}>
@@ -65,13 +63,6 @@ function ProjectList() {
                     <p className="project__tool-title">{tool.toolName}</p>
                   </div>
                 ))}
-                {/* <div className="project__tool u-center-text">
-                  <ion-icon
-                    class="project__tool-icon"
-                    name="logo-nodejs"
-                  ></ion-icon>
-                  <p className="project__tool-title">Node JS</p>
-                </div> */}
               </div>
               <p className="project__detail" style={{color: project.theme}}>{project.description}</p>
               <div className="project__links">

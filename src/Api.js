@@ -3,7 +3,7 @@ export const projects = [
       id: "p1",
       avatar: "./images/project1.png",
       isNew: true,
-      startDate: "2021",
+      startDate: "01/2021",
       endDate: "now",
       name: "ETT-Stock",
       url: {
@@ -22,7 +22,7 @@ export const projects = [
       id: "p2",
       avatar: "./images/project2.png",
       isNew: true,
-      startDate: "2021",
+      startDate: "11/2021",
       endDate: "now",
       name: "ETT-Shop",
       url: {
@@ -36,5 +36,23 @@ export const projects = [
       description:
         "Redesign ETT Co.,Ltd website. For the original site is http://www.ett.co.th.",
       theme: "#fff"
+    },
+    {
+      id: "p3",
+      avatar: "./images/project3.png",
+      isNew: false,
+      startDate: "07/2021",
+      endDate: "",
+      name: "Tesla-Clone",
+      url: {
+        base: "https://tesla-clone-c5b2a.web.app",
+        github: "https://github.com/boonyarit86/Tesla-Clone",
+      },
+      tools: [
+        { toolName: "React", iconName: "logo-react" }
+      ],
+      description:
+        "Build this site by using styled-component.",
+      theme: "#0f141e"
     },
   ];

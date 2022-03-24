@@ -5,7 +5,6 @@ function AboutMe() {
   useEffect(() => {
     // Lazy loading images
     const profileImgEl = document.querySelector(".detail-profile__img[data-src]");
-    console.log(profileImgEl);
     const loadImg = function (entries, observer) {
       const [entry] = entries;
 
