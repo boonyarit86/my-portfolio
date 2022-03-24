@@ -33,6 +33,13 @@
     transition: all 0.3s;
   }
 
+  &__year,
+  &__status-text,
+  &__tool-title,
+  &__detail {
+    font-size: 1.6rem;
+  }
+
   &__image {
     position: absolute;
     top: 0;
@@ -49,8 +56,6 @@
   }
 
   &__year {
-    font-size: 1.6rem;
-    color: $color-grey-dark;
     flex: 1;
   }
 
@@ -67,20 +72,14 @@
     top: 1rem;
   }
 
-  &__status-text {
-    font-size: 1.6rem;
-    color: $color-white;
-  }
-
   &__title {
     font-size: 2.4rem;
     font-weight: $font-weight-bold;
-    a {
-      color: $color-black;
-    }
+    display: block;
   }
 
-  &__tools, &__links {
+  &__tools,
+  &__links {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -91,41 +90,23 @@
     margin-top: 1rem;
   }
 
-  &__tool {
-    padding: 0.5rem;
-    &-icon {
-      width: 2.4rem;
-      height: 2.4rem;
-    }
-
-    &-title {
-      font-size: 1.6rem;
-    }
-  }
-
+  &__tool,
   &__link {
     padding: 0.5rem;
-    &-icon {
-      width: 2.4rem;
-      height: 2.4rem;
-    }
-
-    &-title {
-      font-size: 1.2rem;
-    }
   }
 
-  &__link:hover a {
-    color: $color-white;
+  &__tool-icon,
+  &__link-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  &__link-title {
+    font-size: 1.2rem;
   }
 
   &__link a {
     color: $color-grey-dark;
-  }
-
-  &__detail {
-    color: $color-grey-dark;
-    font-size: 1.6rem;
   }
 
   &:hover::after {
@@ -136,9 +117,13 @@
     transform: scale(1.1);
   }
 
-  &:hover &__title a,
-  &:hover &__tool-title {
-    color: $color-white;
+  &:hover &__title,
+  &:hover &__tool-title,
+  &:hover &__detail,
+  &:hover &__year,
+  &__link:hover a,
+  &__status-text {
+    color: $color-white !important;
   }
 
   &:hover &__status {
