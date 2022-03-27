@@ -39,6 +39,24 @@ export const projects = [
     },
     {
       id: "p3",
+      avatar: "./images/project4.png",
+      isNew: false,
+      startDate: "02/2022",
+      endDate: "03/2022",
+      name: "Omnifood",
+      url: {
+        base: "https://omnifood-b7da2.web.app",
+        github: "https://github.com/boonyarit86/Omnifood",
+      },
+      tools: [
+        { toolName: "React", iconName: "logo-react" }
+      ],
+      description:
+        "This website is built after learning a course from Udemy. (Course url: https://www.udemy.com/course/design-and-develop-a-killer-website-with-html5-and-css3)",
+      theme: "#0f141e"
+    },
+    {
+      id: "p4",
       avatar: "./images/project3.png",
       isNew: false,
       startDate: "07/2021",
@@ -54,5 +72,5 @@ export const projects = [
       description:
         "Build this site by using styled-component.",
       theme: "#0f141e"
-    },
+    }
   ];
