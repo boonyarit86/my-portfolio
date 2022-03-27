@@ -50,6 +50,8 @@ function AboutMe() {
               Javascript. In addition, I’m able to connect my websites to
               database by way of using Node js, Express & MongoDB.
             </p>
+
+            <a className="detail-aboutme__btn-download" href="#">Download</a>
           </div>
         </div>
       </div>
