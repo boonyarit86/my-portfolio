@@ -3,7 +3,7 @@ import React, { useState } from "react";
 function Achievement() {
   const [achievements] = useState([
     { title: "Experience", icon: "briefcase", description: "0 Year" },
-    { title: "Completed", icon: "checkmark-circle", description: "2 Projects" },
+    { title: "Completed", icon: "checkmark-circle", description: "6 Projects" },
   ]);
 
   return (

@@ -51,7 +51,7 @@ function AboutMe() {
               database by way of using Node js, Express & MongoDB.
             </p>
 
-            <a className="detail-aboutme__btn-download" href="#">Download</a>
+            <a className="detail-aboutme__btn-download" href="https://drive.google.com/drive/folders/1mdX1d5xcR4siex78IykXhqZkJD_vzRFA?usp=sharing">Download</a>
           </div>
         </div>
       </div>

@@ -31,7 +31,7 @@ function Nav() {
     <React.Fragment>
       <nav className="nav">
         <div className="nav__logo-box">
-          <img src="./images/logo-outline--black.svg" alt="logo" />
+          <a href="#section-1"><img src="./images/logo-outline--black.svg" alt="logo" /></a>
           <span className="nav__author">Boonyarit Ritdet</span>
         </div>
       </nav>
