@@ -7,7 +7,7 @@ export const projects = [
       endDate: "now",
       name: "ETT-Stock",
       url: {
-        base: "https://ett-test.herokuapp.com",
+        base: "https://ett-stock.herokuapp.com",
         github: "https://github.com/boonyarit86/ETT-Electronic-Stock",
       },
       tools: [
@@ -21,7 +21,7 @@ export const projects = [
     {
       id: "p2",
       avatar: "./images/project2.png",
-      isNew: true,
+      isNew: false,
       startDate: "11/2021",
       endDate: "now",
       name: "ETT-Shop",
@@ -52,7 +52,7 @@ export const projects = [
         { toolName: "React", iconName: "logo-react" }
       ],
       description:
-        "This website is built after learning a course from Udemy. (Course url: https://www.udemy.com/course/design-and-develop-a-killer-website-with-html5-and-css3)",
+        "This website is built after learning a course from Udemy.",
       theme: "#0f141e"
     },
     {

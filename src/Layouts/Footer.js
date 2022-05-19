@@ -30,8 +30,8 @@ function Footer() {
             <h3 className="footer__heading">Latest projects —</h3>
             <ul className="footer__menu-list">
               {projects.length !== 0 &&
-                projects.map((project) => (
-                  <li className="footer__menu-item">
+                projects.map((project, index) => (
+                  <li className="footer__menu-item" key={index}>
                     <a className="footer__menu-link" href={project.url.base}>
                       {project.name}
                     </a>

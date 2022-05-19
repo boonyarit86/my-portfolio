@@ -28,7 +28,7 @@ const data = [
       { skill: "Heroku", level: "Intermediate" },
       { skill: "Github", level: "Intermediate" },
       { skill: "Figma", level: "Intermediate" },
-      { skill: "Bootstrap", level: "Basic" },
+      { skill: "Postman", level: "Basic" },
       { skill: "Material UI", level: "basic" },
       { skill: "Adobe XD", level: "basic" },
     ],
